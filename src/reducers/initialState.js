@@ -15,7 +15,7 @@ export default {
       threeYear: 0
     }
   },
-  story: {
+  storySaving: {
     storyRawText: ''
   }
 };
