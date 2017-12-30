@@ -28,7 +28,7 @@ export class StoryPage extends React.Component {
         </div>
         <div className="story-clean">
           <h3>Kindergarten and First Grade approved story!</h3>
-          <span>{this.props.storySaving.storyClean}</span>
+          <h4>{this.props.storySaving.storyClean}</h4>
         </div>
       </div>
     );
