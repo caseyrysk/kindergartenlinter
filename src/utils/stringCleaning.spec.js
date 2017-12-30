@@ -18,4 +18,17 @@ describe('String Cleaning', () => {
       expect(replaceBadWords('simple farts')).toEqual('simple flowers');
     });
   });
+
+  describe('plural word replace', () => {
+    it('returns flower for stupid', () => {
+      expect(replaceBadWords('simple stupid', ['stupid', 'dumb'], ['flower'])).toEqual('simple flower');
+    });
+  });
+
+
+  describe('plural word replace', () => {
+    it('returns flower for stupid', () => {
+      expect(replaceBadWords('simple stupid', ['stupid', 'dumb'], ['foobar'])).toEqual('simple foobar');
+    });
+  });
 });

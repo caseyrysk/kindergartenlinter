@@ -1,12 +1,20 @@
-export function replaceBadWords (inputText) {
+export function replaceBadWords (inputText, badTokens, replacementTokens) {
     if (inputText === null) {
         return null;
     }
 
-    const searchMask = "butt|fart|burp";
-    const regEx = new RegExp(searchMask, "ig");
-    const replaceMask = "flower";
-    
+    let replaceMask = "flower";    
+    let searchMask = "butt|fart|burp";
+
+    if (badTokens && badTokens !== null) {
+        searchMask = badTokens.join('|');
+    }
+
+    if (replacementTokens && replacementTokens !== null) {
+        replaceMask = replacementTokens[Math.floor(replacementTokens.length * Math.random())];
+    }
+
+    const regEx = new RegExp(searchMask, "ig");    
     const result = inputText.replace(regEx, replaceMask);
 
     return result;
