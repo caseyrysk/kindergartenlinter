@@ -20,7 +20,7 @@ export default {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/story',
     filename: '[name].[chunkhash].js'
   },
   plugins: [

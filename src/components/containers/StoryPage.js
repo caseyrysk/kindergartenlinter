@@ -21,7 +21,7 @@ export class StoryPage extends React.Component {
     return (
       <div>
         <h1>Write a kid safe story!</h1>
-        <h2>Get Started</h2>
+        <h2>Write a story and if you write a bad word (fart, butt, burp) they will be replaced!</h2>
         <div className="story-entry">
           <h3>Enter your story below:</h3>
           <textarea className="text-entry" onChange={this.textEntryOnChange} />
