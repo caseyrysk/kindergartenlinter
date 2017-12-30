@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import FuelSavingsPage from './containers/FuelSavingsPage';
 import AboutPage from './AboutPage';
 import NotFoundPage from './NotFoundPage';
+import StoryPage from './StoryPage';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -22,11 +23,14 @@ class App extends React.Component {
           <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
           {' | '}
           <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
+          {' | '}
+          <NavLink to="/story" activeStyle={activeStyle}>Story</NavLink>
         </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/fuel-savings" component={FuelSavingsPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/story" component={StoryPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
