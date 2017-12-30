@@ -6,7 +6,7 @@ import HomePage from './HomePage';
 import FuelSavingsPage from './containers/FuelSavingsPage';
 import AboutPage from './AboutPage';
 import NotFoundPage from './NotFoundPage';
-import StoryPage from './StoryPage';
+import StoryPage from './containers/StoryPage';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
