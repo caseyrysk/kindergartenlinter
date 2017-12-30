@@ -1,7 +1,7 @@
-import {SAVE_STORY} from '../constants/actionTypes';
+import { SAVE_STORY, SAVE_BADTOKENS } from '../constants/actionTypes';
 import objectAssign from 'object-assign';
 import initialState from './initialState';
-import {replaceBadWords} from '../utils/stringCleaning';
+import { replaceBadWords } from '../utils/stringCleaning';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
 // State is considered immutable. Instead,
@@ -10,12 +10,16 @@ import {replaceBadWords} from '../utils/stringCleaning';
 // and update values on the copy.
 export default function storySavingsReducer(state = initialState.storySaving, action) {
   switch (action.type) {
+    case SAVE_BADTOKENS:
+
+      return objectAssign({}, state, { badTokens: action.badTokens.split()});
+
     case SAVE_STORY:
       // For this example, just simulating a save by changing date modified.
       // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
       // console.debug("SAVE_STORY storySavingsReducer::" + action.storyTextRaw);  // eslint-disable-line
 
-      return objectAssign({}, state, {storyRawText: action.storyTextRaw, storyClean: replaceBadWords(action.storyTextRaw, state.badTokens, state.replacementTokens)});
+      return objectAssign({}, state, { storyRawText: action.storyTextRaw, storyClean: replaceBadWords(action.storyTextRaw, state.badTokens, state.replacementTokens) });
 
     default:
       return state;

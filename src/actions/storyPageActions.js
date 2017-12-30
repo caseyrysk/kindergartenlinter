@@ -12,3 +12,11 @@ export function saveStoryText(storyTextRaw) {
   };
 }
 
+export function saveBadTokens(badTokens) {
+  return function (dispatch) {
+    return dispatch({
+      type: types.SAVE_BADTOKENS,
+      badTokens: badTokens
+    });
+  };
+}
