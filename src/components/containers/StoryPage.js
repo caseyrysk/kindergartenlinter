@@ -5,14 +5,17 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/storyPageActions';
 
 export class StoryPage extends React.Component {
-  saveStoryText = () => {
-    this.props.actions.saveStoryText("test");
+  saveStoryText = (text) => {
+    this.props.actions.saveStoryText(text);
   }
 
   textEntryOnChange = e => {
-    // eslint-disable-next-line
-    console.debug(e);
-    console.debug(e.target.value); // eslint-disable-line
+    console.log(e.target.value); // eslint-disable-line
+    const storyText = e.target.value;
+    
+    if (storyText !== null){
+      this.saveStoryText(storyText);
+    }
   }
 
   render() {
