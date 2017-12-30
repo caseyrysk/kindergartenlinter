@@ -16,6 +16,6 @@ export default {
     }
   },
   story: {
-    storyRawText: null
+    storyRawText: ''
   }
 };

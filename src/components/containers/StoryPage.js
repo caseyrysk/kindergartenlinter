@@ -12,36 +12,37 @@ export class StoryPage extends React.Component {
   textEntryOnChange = e => {
     console.log(e.target.value); // eslint-disable-line
     const storyText = e.target.value;
-    
-    if (storyText !== null){
+
+    if (storyText !== null) {
       this.saveStoryText(storyText);
     }
   }
 
   render() {
     return (
-    <div>
-      <h1>Write a kid safe story!</h1>
-      <h2>Get Started</h2>
-      <div className="story-entry">
-        <h3>Enter your story below:</h3>
-        <textarea className="text-entry" onChange={this.textEntryOnChange} />
+      <div>
+        <h1>Write a kid safe story!</h1>
+        <h2>Get Started</h2>
+        <div className="story-entry">
+          <h3>Enter your story below:</h3>
+          <textarea className="text-entry" onChange={this.textEntryOnChange} />
+        </div>
+        <div className="story-clean">
+          <span>{this.props.storySaving.storyRawText}</span>
+        </div>
       </div>
-      <div className="story-clean">
-        <span />
-      </div>
-    </div>
     );
   }
 }
 
 StoryPage.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  storySaving: PropTypes.object.isRequired  
 };
 
 function mapStateToProps(state) {
   return {
-    storyRawText: state.storyRawText
+    storySaving: state.storySaving
   };
 }
 
