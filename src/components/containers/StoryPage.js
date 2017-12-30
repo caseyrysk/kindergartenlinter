@@ -9,6 +9,12 @@ export class StoryPage extends React.Component {
     this.props.actions.saveStoryText("test");
   }
 
+  textEntryOnChange = e => {
+    // eslint-disable-next-line
+    console.debug(e);
+    console.debug(e.target.value); // eslint-disable-line
+  }
+
   render() {
     return (
     <div>
@@ -16,7 +22,7 @@ export class StoryPage extends React.Component {
       <h2>Get Started</h2>
       <div className="story-entry">
         <h3>Enter your story below:</h3>
-        <textarea className="text-entry" />
+        <textarea className="text-entry" onChange={this.textEntryOnChange} />
       </div>
       <div className="story-clean">
         <span />
