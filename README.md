@@ -34,7 +34,9 @@ This will run the automated build process, start up a webserver, and open the ap
 1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
 2. **Install [Git](https://git-scm.com/downloads)**. 
 3. **[Disable safe write in your editor](https://webpack.js.org/guides/development/#adjusting-your-text-editor)** to assure hot reloading works properly.
-4. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.  
+4. Install brew
+5. Install watchman: brew install watchman
+6. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.  
  
 **On Linux:**  
 
