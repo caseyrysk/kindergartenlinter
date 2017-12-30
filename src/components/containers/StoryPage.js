@@ -10,7 +10,6 @@ export class StoryPage extends React.Component {
   }
 
   textEntryOnChange = e => {
-    console.log(e.target.value); // eslint-disable-line
     const storyText = e.target.value;
 
     if (storyText !== null) {
@@ -28,6 +27,7 @@ export class StoryPage extends React.Component {
           <textarea className="text-entry" onChange={this.textEntryOnChange} />
         </div>
         <div className="story-clean">
+          <h3>Kindergarten and First Grade approved story!</h3>
           <span>{this.props.storySaving.storyClean}</span>
         </div>
       </div>
@@ -37,7 +37,7 @@ export class StoryPage extends React.Component {
 
 StoryPage.propTypes = {
   actions: PropTypes.object.isRequired,
-  storySaving: PropTypes.object.isRequired  
+  storySaving: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
