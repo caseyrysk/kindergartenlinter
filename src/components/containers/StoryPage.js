@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { NavLink } from 'react-router-dom';
+
 import * as actions from '../../actions/storyPageActions';
 
 export class StoryPage extends React.Component {
@@ -21,7 +23,7 @@ export class StoryPage extends React.Component {
     return (
       <div>
         <h1>Write a kid safe story!</h1>
-        <h2>Write a story and if you write a bad word ({this.props.storySaving.badTokens.join(", ")}) they will be replaced!</h2>
+        <h2>Write a story and if you write a bad word ({this.props.storySaving.badTokens.join(", ")}) they will be replaced!  <NavLink to="/story/config" >Update bad words here</NavLink></h2>
         <div className="story-entry">
           <h3>Enter your story below:</h3>
           <textarea className="text-entry" onChange={this.textEntryOnChange} />
