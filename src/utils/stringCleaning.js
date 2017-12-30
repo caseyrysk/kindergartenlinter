@@ -3,7 +3,7 @@ export function replaceBadWords (inputText) {
         return null;
     }
 
-    const searchMask = "butt";
+    const searchMask = "butt|fart|burp";
     const regEx = new RegExp(searchMask, "ig");
     const replaceMask = "flower";
     
