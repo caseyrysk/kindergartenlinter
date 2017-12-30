@@ -16,6 +16,7 @@ export default {
     }
   },
   storySaving: {
-    storyRawText: ''
+    storyRawText: '',
+    storyClean: ''
   }
 };

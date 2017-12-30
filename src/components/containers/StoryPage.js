@@ -28,7 +28,7 @@ export class StoryPage extends React.Component {
           <textarea className="text-entry" onChange={this.textEntryOnChange} />
         </div>
         <div className="story-clean">
-          <span>{this.props.storySaving.storyRawText}</span>
+          <span>{this.props.storySaving.storyClean}</span>
         </div>
       </div>
     );
