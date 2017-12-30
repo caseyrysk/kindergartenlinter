@@ -21,7 +21,7 @@ describe('String Cleaning', () => {
 
   describe('plural word replace', () => {
     it('returns flower for stupid', () => {
-      expect(replaceBadWords('simple stupid', ['stupid', 'dumb'], ['flower'])).toEqual('simple flower');
+      expect(replaceBadWords('simple stupid', ['stupid', 'dumb'], ['flower', 'flower'])).toEqual('simple flower');
     });
   });
 

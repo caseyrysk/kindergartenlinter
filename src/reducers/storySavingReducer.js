@@ -13,9 +13,9 @@ export default function storySavingsReducer(state = initialState.storySaving, ac
     case SAVE_STORY:
       // For this example, just simulating a save by changing date modified.
       // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
-      console.debug("SAVE_STORY storySavingsReducer::" + action.storyTextRaw);  // eslint-disable-line
+      // console.debug("SAVE_STORY storySavingsReducer::" + action.storyTextRaw);  // eslint-disable-line
 
-      return objectAssign({}, state, {storyRawText: action.storyTextRaw, storyClean: replaceBadWords(action.storyTextRaw)});
+      return objectAssign({}, state, {storyRawText: action.storyTextRaw, storyClean: replaceBadWords(action.storyTextRaw, state.badTokens, state.replacementTokens)});
 
     default:
       return state;
