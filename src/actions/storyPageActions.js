@@ -1,4 +1,5 @@
 import * as types from '../constants/actionTypes';
+import { persistBadTokens } from '../api/saveTokenApi';
 
 // example of a thunk using the redux-thunk middleware
 export function saveStoryText(storyTextRaw) {
@@ -13,10 +14,14 @@ export function saveStoryText(storyTextRaw) {
 }
 
 export function saveBadTokens(badTokens) {
+  const tokens = badTokens.split(',').map(item => item.trim());
   return function (dispatch) {
-    return dispatch({
-      type: types.SAVE_BADTOKENS,
-      badTokens: badTokens
-    });
+    return persistBadTokens(tokens)
+      .then(() => {
+        return dispatch({
+          type: types.SAVE_BADTOKENS,
+          badTokens: tokens
+        });
+      });
   };
 }

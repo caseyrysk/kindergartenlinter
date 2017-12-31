@@ -11,8 +11,7 @@ import { replaceBadWords } from '../utils/stringCleaning';
 export default function storySavingsReducer(state = initialState.storySaving, action) {
   switch (action.type) {
     case SAVE_BADTOKENS:
-
-      return objectAssign({}, state, { badTokens: action.badTokens.split(',').map(item => item.trim())});
+      return objectAssign({}, state, { badTokens: action.badTokens });
 
     case SAVE_STORY:
       // For this example, just simulating a save by changing date modified.
