@@ -11,7 +11,7 @@ export function replaceBadWords(inputText, badTokens, replacementTokens) {
     }
 
     if (replacementTokens && replacementTokens !== null) {
-        replaceMask = replacementTokens; //[Math.floor(replacementTokens.length * Math.random())];
+        replaceMask = replacementTokens;
     }
     const regEx = new RegExp(searchMask, "ig");
     const result = inputText.split(' ').map(
