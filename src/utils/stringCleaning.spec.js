@@ -25,10 +25,15 @@ describe('String Cleaning', () => {
     });
   });
 
-
   describe('plural word replace', () => {
     it('returns flower for stupid', () => {
       expect(replaceBadWords('simple stupid', ['stupid', 'dumb'], ['foobar'])).toEqual('simple foobar');
+    });
+  });
+
+  describe('unique replace', () => {
+    it('returns foo bar for dumb stupid', () => {
+      expect(replaceBadWords('dumb stupid', ['stupid', 'dumb'], ['foo', 'bar'])).toEqual('foo bar');
     });
   });
 });
