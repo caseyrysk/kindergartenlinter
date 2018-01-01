@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import 'whatwg-fetch';
 
 export function getAntonym(sourceToken, replaceNoMatch) {
     const srcUrl = "https://api.datamuse.com/words?rel_ant=";
