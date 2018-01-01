@@ -2,16 +2,6 @@ import { replaceBadWords } from './stringCleaning';
 
 const stupidAntonyms = '[{ "word": "smart", "score": 4279 }, { "word": "intelligent", "score": 1506 }]';
 
-// const mockResponse = (status, statusText, response) => {
-//   return new window.Response(response, {
-//     status: status,
-//     statusText: statusText,
-//     headers: {
-//       'Content-type': 'application/json'
-//     }
-//   });
-// };
-
 describe('String Cleaning', () => {
   describe('simple replace', () => {
     it('returns flower for butt', () => {
@@ -21,7 +11,7 @@ describe('String Cleaning', () => {
       //     200, null, '{ "word": "smart", "score": 4279 }, { "word": "intelligent", "score": 1506 }'
       //   )));
       expect(replaceBadWords('simple butt', ['butt'], ['flower'])).resolves.toEqual('simple flower');
-      // expect(fetch).toHaveBeenCalledTimes(1);
+      expect(fetch).toHaveBeenCalledTimes(2);
     });
   });
 
