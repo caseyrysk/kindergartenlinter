@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-export async function getAntonym(sourceToken, replaceNoMatch) {
+export function getAntonym(sourceToken, replaceNoMatch) {
     const srcUrl = "https://api.datamuse.com/words?rel_ant=";
 
     // let result = null;
