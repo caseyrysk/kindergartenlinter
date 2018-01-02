@@ -1,15 +1,20 @@
 import * as types from '../constants/actionTypes';
 import { persistBadTokens } from '../api/saveTokenApi';
+import { replaceBadWords } from '../utils/stringCleaning';
 
 // example of a thunk using the redux-thunk middleware
-export function saveStoryText(storyTextRaw) {
+export function saveStoryText(storyTextRaw, badTokens, replacementTokens) {
   return function (dispatch) {
     // thunks allow for pre-processing actions, calling apis, and dispatching multiple actions
     // in this case at this point we could call a service that would persist the fuel savings
-    return dispatch({
-      type: types.SAVE_STORY,
-      storyTextRaw: storyTextRaw
-    });
+    // call to get replacement word here
+    return replaceBadWords(storyTextRaw, badTokens, replacementTokens)
+      .then( (cleanString) => {
+        return dispatch({
+          type: types.SAVE_STORY,
+          storyTextRaw: cleanString
+        });
+      });    
   };
 }
 

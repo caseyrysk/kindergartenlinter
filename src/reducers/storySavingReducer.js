@@ -2,7 +2,6 @@ import { SAVE_STORY, SAVE_BADTOKENS } from '../constants/actionTypes';
 import objectAssign from 'object-assign';
 import initialState from './initialState';
 import 'babel-polyfill';
-import { replaceBadWords } from '../utils/stringCleaning';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
 // State is considered immutable. Instead,
@@ -19,7 +18,7 @@ export default function storySavingsReducer(state = initialState.storySaving, ac
       // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
       // console.debug("SAVE_STORY storySavingsReducer::" + action.storyTextRaw);  // eslint-disable-line
 
-      return objectAssign({}, state, { storyRawText: action.storyTextRaw, storyClean: replaceBadWords(action.storyTextRaw, state.badTokens, state.replacementTokens) });
+      return objectAssign({}, state, { storyRawText: action.storyTextRaw, storyClean: action.storyTextRaw}); // replaceBadWords(action.storyTextRaw, state.badTokens, state.replacementTokens) }
 
     default:
       return state;

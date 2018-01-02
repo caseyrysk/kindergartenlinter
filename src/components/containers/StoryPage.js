@@ -8,7 +8,7 @@ import * as actions from '../../actions/storyPageActions';
 
 export class StoryPage extends React.Component {
   saveStoryText = (text) => {
-    this.props.actions.saveStoryText(text);
+    this.props.actions.saveStoryText(text, this.props.storySaving.badTokens, this.props.storySaving.replacementTokens);
   }
 
   textEntryOnChange = e => {
