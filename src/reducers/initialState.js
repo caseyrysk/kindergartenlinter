@@ -18,7 +18,7 @@ export default {
   storySaving: {
     storyRawText: '',
     storyClean: '',
-    badTokens: ['fart', 'burp', 'poop', 'stupid', 'theo', 'butt', 'pee'],
-    replacementTokens: ['flower', 'gaby', 'lucy', 'popi', 'gramps', 'olivia', 'clone', 'dog!!!', 'carrot']
+    badTokens: ['dumb', 'idiot', 'poop', 'stupid', 'butt', 'pee', 'dolt', 'cretin'],
+    replacementTokens: ['flower', 'dog', 'carrot', 'brocolli']
   }
 };
