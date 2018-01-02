@@ -1,6 +1,7 @@
 import { SAVE_STORY, SAVE_BADTOKENS } from '../constants/actionTypes';
 import objectAssign from 'object-assign';
 import initialState from './initialState';
+import 'babel-polyfill';
 import { replaceBadWords } from '../utils/stringCleaning';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
