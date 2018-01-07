@@ -1,6 +1,8 @@
 import { getAntonym } from '../api/wordApi';
 
 export async function replaceBadWords(inputText, badTokens, replacementTokens) {
+    // console.log("replaceBadWords::" + inputText + "::" + badTokens); // eslint-disable-line
+
     if (inputText === null) {
         return null;
     }
@@ -30,6 +32,7 @@ export async function replaceBadWords(inputText, badTokens, replacementTokens) {
         .then(results => {
             result = results.join(' ');
         });
+    // console.log("replaceBadWords::end::" + result); // eslint-disable-line
 
     return result;
 }
